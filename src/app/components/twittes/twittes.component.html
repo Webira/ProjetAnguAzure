@@ -1,0 +1,18 @@
+<h1>Twittes</h1>
+<p>twittes works!</p>
+
+<div *ngIf ="this.isConnected">
+    <div *ngFor="let tweet of this.tweetList">
+        <!-- monter l'info à parent avec output -->
+           <app-twitte-card [tweet]="tweet" (ring)="afficherElement($event)"></app-twitte-card> 
+    </div>
+    
+        <!-- monter l'info Data à parent de enfant(curent-tweet) -->
+        <!-- <app-curent-tweet [tweet]="tweet" (ring)="afficherElement($event)"></app-curent-tweet> -->
+
+</div>
+<div *ngIf="!this.isConnected">
+	<h1>Vous devez être connecté pour voir les tweets</h1>
+</div>
+<!-- passer objet d'info de parent à enfant curentTweet -->
+<app-curent-tweet [curentTweet]="this.curentTweet"></app-curent-tweet>
