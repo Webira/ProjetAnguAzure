@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TwitteCardComponent } from '../twitte-card/twitte-card.component';
 import { CurentTweetComponent } from '../curent-tweet/curent-tweet.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-twittes',
@@ -15,10 +16,20 @@ import { CurentTweetComponent } from '../curent-tweet/curent-tweet.component';
 })
 export class TwittesComponent {
 
-  constructor() { }
+  ngOnInit(): void {
+		if (!this.isConnected) {
+			this.router.navigate(['/connexion']);
+		}
+	}
+
+  constructor(public router: Router) { }
   isConnected = true;
   
   curentTweet: any;
+  goToConnexion() {
+		this.router.navigate(['/connexion']);
+	}
+
 
   tweetList = [
     {

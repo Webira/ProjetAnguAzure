@@ -14,7 +14,9 @@ export class CurentTweetComponent {
  /* @Output()
   ring = new EventEmitter<any>();*/
 
-  constructor() { }
+  constructor() {
+    
+   }
   
     
 }

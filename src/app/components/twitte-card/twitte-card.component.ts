@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-twitte-card',
@@ -9,18 +10,20 @@ import { Component, EventEmitter, Input, Output, input } from '@angular/core';
 })
 export class TwitteCardComponent {
   //decsende l'info de parent(tweet) aux enfants(tweet-card)
-    @Input()
+  @Input()
   tweet: any;
   
   // monter l'info(evenement) de enfant à parent
   @Output()
-  ring = new EventEmitter<Number>();
+  ring = new EventEmitter<any>();
 
-  constructor() { }
-    ft_output(nb: Number) {
-      this.ring.emit(nb);
-      
-      console.log(this.tweet)
-      return this.tweet
+  constructor(public router: Router) { }
+
+  /*ft_output(tweet:any) {
+    this.ring.emit(tweet);
+  }*/
+  ft_output(tweet: any) {
+    this.router.navigate(['/curent-tweet', tweet.id]);
+
   }
 }
