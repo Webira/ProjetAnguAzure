@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-curent-tweet',
@@ -10,13 +11,14 @@ import { Component, Input } from '@angular/core';
 export class CurentTweetComponent {
   @Input()
   curentTweet: any;
+  
   // monter l'info(evenement) de enfant à parent
  /* @Output()
   ring = new EventEmitter<any>();*/
 
-  constructor() {
+  constructor(public auth : AuthService) {
     
-   }
+  }
   
     
 }

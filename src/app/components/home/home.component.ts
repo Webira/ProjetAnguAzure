@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../Services/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +10,17 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  varNomPren: any;
+
+  constructor(public auth: AuthService, public http: HttpClient) {
+  }
+  
+  callNom() {
+    this.http.get("https://azurefunctionirina.azurewebsites.net/api/HttpTrigger_IrinaGuery?code=RinTem76xqGF2dCnmrSf2GFJ1umnuGKbl2poUybDqd9jAzFuu_vWnQ%3D%3D").subscribe((data : any) => {
+      console.log(data);
+       this.varNomPren = data.value;
+    })
+  }
 
 }

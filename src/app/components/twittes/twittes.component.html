@@ -15,5 +15,6 @@
 	    <h1>Vous devez être connecté pour voir les tweets</h1>
         <button (click)="this.goToConnexion()">Se connecter</button>
 </div>
+<button (click)="this.auth.connection()">Deconnecter</button>
 <!-- passer objet d'info de parent à enfant curentTweet -->
-<app-curent-tweet [curentTweet]="this.curentTweet"></app-curent-tweet>
+<!-- <app-curent-tweet [curentTweet]="this.curentTweet"></app-curent-tweet> -->

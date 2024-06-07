@@ -1,2 +1,9 @@
 <h1>Inscription</h1>
 <p>inscription works!</p>
+
+<button (click)="this.auth.connection()">Connecter</button>
+<!-- appele à l'observable -->
+<p>voici la valeur {{this.variable}}</p>
+<button (click)="call()" >refresh</button>
+
+<button (click)="this.auth.connection()">Deconnecter</button>
