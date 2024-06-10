@@ -9,6 +9,6 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'inscription', component: InscriptionComponent },
     { path: 'connextion', component: ConnextionComponent },
-    { path: 'twittes', component: TwittesComponent },
+    { path: 'twittes', component: TwittesComponent }, //canActivate: [authGuard] },
     { path: 'curent-tweet/:id', component: CurentTweetComponent },
 ];
