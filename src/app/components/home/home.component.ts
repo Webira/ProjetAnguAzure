@@ -11,15 +11,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent {
 
-  varNomPren: any;
+  //varNomPren: any;
+  affichNom: any;
 
   constructor(public auth: AuthService, public http: HttpClient) {
   }
   
   callNom() {
-    this.http.get("https://azurefunctionirina.azurewebsites.net/api/HttpTrigger_IrinaGuery?code=RinTem76xqGF2dCnmrSf2GFJ1umnuGKbl2poUybDqd9jAzFuu_vWnQ%3D%3D").subscribe((data : any) => {
+    this.http.get("https://azurefunctionirina.azurewebsites.net/api/HttpTrigger_IrinaGuery?").subscribe((data : any) => {
       console.log(data);
-       this.varNomPren = data.value;
+       this.affichNom = data.nomPrenom;
     })
   }
 
