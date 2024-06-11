@@ -10,5 +10,5 @@ export const routes: Routes = [
     { path: 'inscription', component: InscriptionComponent },
     { path: 'connextion', component: ConnextionComponent },
     { path: 'twittes', component: TwittesComponent },
-    //{ path: 'curent-tweet/:id', component: CurentTweetComponent },
+    { path: 'curent-tweet/:id', component: CurentTweetComponent },
 ];

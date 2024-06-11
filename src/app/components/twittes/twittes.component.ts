@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TwitteCardComponent } from '../twitte-card/twitte-card.component';
 import { CurentTweetComponent } from '../curent-tweet/curent-tweet.component';
 import { Router } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-twittes',
@@ -22,7 +23,7 @@ export class TwittesComponent {
 		}
 	}
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public auth: AuthService) { }
   isConnected = true;
   
   curentTweet: any;
@@ -30,19 +31,21 @@ export class TwittesComponent {
 		this.router.navigate(['/connexion']);
 	}
 
-
   tweetList = [
     {
+      img:"https://i.imgur.com/N2VaelH.jpg",
       id: 1,
       username: 'User1',
       content: 'Content1',
     },
     {
+      img:"https://i.imgur.com/N2VaelH.jpg",
       id: 2,
       username: 'User2',
       content: 'Content2',
     },
     {
+      img:"https://i.imgur.com/9XG7PLb.jpg",
       id: 3,
       username: 'User3',
       content: 'Content3',
