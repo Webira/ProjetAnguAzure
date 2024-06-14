@@ -24,4 +24,14 @@ export class HomeComponent {
     })
   }
 
+  /*img = '';
+	titre = '';
+	constructor(public auth: AuthService, public http: HttpClient) {
+		this.http.get("https://backendchristopherloisel.azurewebsites.net/api/backGet?").subscribe((data: any) => {
+			console.log(data);
+			this.img = data.contenu;
+			this.titre = data.titre;
+		})
+	} */
+
 }
